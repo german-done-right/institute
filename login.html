@@ -213,7 +213,7 @@
                                 <a href="login.html#" class="forgot-password">
                                     Forgot your Password?
                                 </a>
-                                <button type="submit" class="default-btn d-block w-100">
+                                <button type="submit" class="default-btn d-block w-100" onclick="saveAccess()">
                                     Log in
                                 </button>
                                 <p class="text-center">
@@ -242,6 +242,7 @@
                 </div>
             </div>
         </div>
+        
         <!-- End Login Area -->
 
         <!-- Start Footer Area -->
@@ -432,6 +433,7 @@
         <!-- End Footer Area -->
          
 <!--Start Popup Script-->
+        
 		<script data-cfasync="false">(function(w,i,s,e){window[w]=window[w]||function(){(window[w].q=window[w].q||[]).push(arguments)};window[w].l=Date.now();s=document.createElement('script');e=document.getElementsByTagName('script')[0];s.defer=1;s.src=i;e.parentNode.insertBefore(s, e)})('wisepops', 'https://wisepops.net/loader.js?v=2&h=HzBeEscjD9');</script>
 
         <!--Start of Live Chat Script-->
@@ -453,4 +455,15 @@
         <script src="assets/js/scrollCue.min.js"></script>
         <script src="assets/js/custom.js"></script>
     </body>
+    <script>
+  function saveAccess() {
+    const code = document.getElementById("passwordInput").value.trim();
+    if (code === "Letmein777") {
+      localStorage.setItem("hasAccess", "true");
+      alert("✅ Access granted!");
+    } else {
+      alert("❌ Invalid code");
+    }
+  }
+</script>
 </html>

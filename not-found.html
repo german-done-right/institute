@@ -173,9 +173,7 @@
                 <p class="mx-auto">
                     The page you are looking for might have been removed had its name changed or is temporarily unavailable.
                 </p>
-                <a href="index.html" class="default-btn">
-                    Back To Home
-                </a>
+                <a href="#" class="default-btn" onclick="logoutAndReturn()">Logout & Return</a>
             </div>
         </div>
         <!-- End Not Found Area -->
@@ -389,4 +387,15 @@
         <script src="assets/js/scrollCue.min.js"></script>
         <script src="assets/js/custom.js"></script>
     </body>
+    <a href="#" class="default-btn" onclick="logoutAndReturn()">Logout & Return</a>
+
+<script>
+  function logoutAndReturn() {
+    localStorage.removeItem("hasAccess");
+    localStorage.removeItem("accessTimestamp");
+    alert("🔒 Access removed. Returning to homepage...");
+    window.location.href = "index.html"; // or your actual homepage
+  }
+</script>
+
 </html>

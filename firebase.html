@@ -1,0 +1,41 @@
+<h2>Enter Your Access Code</h2>
+<input type="text" id="accessCode" placeholder="Enter code">
+<button onclick="saveAccess()">Unlock Premium</button>
+
+<script>
+  function saveAccess() {
+    const code = document.getElementById("accessCode").value.trim();
+    if (code === "secret123") {
+      localStorage.setItem("hasAccess", "true");
+      alert("✅ Access granted!");
+    } else {
+      alert("❌ Invalid code");
+    }
+  }
+</script>
+
+
+<script>
+  const btn = document.getElementById("premiumBtn");
+
+  if (localStorage.getItem("hasAccess") === "true") {
+    btn.disabled = false;
+    btn.style.opacity = 1;
+  } else {
+    btn.disabled = true;
+    btn.style.opacity = 0.5;
+    btn.onclick = () => alert("❌ Access denied. Go back to homepage and enter access code.");
+  }
+</script>
+
+<h3>Logout Page</h3>
+<button onclick="logout()">Logout / Remove Access</button>
+
+<script>
+  function logout() {
+    localStorage.removeItem("hasAccess");
+    localStorage.removeItem("accessTimestamp");
+    alert("🔒 Access removed. Returning to homepage...");
+    window.location.href = "index.html"; // 👈 Change this if your homepage is named differently
+  }
+</script>

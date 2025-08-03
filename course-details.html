@@ -232,7 +232,7 @@
                                             <option value="5">Arabic Speaking</option>
                                         </select>
                                     </div>
-                                    <button type="submit" class="default-btn d-block w-100">
+                                    <button type="submit" id="premiumBtn" class="default-btn d-block w-100">
                                         Enroll Now
                                     </button>
                                 </form>
@@ -545,4 +545,16 @@
         <script src="assets/js/scrollCue.min.js"></script>
         <script src="assets/js/custom.js"></script>
     </body>
+    <script>
+  const btn = document.getElementById("premiumBtn");
+
+  if (localStorage.getItem("hasAccess") === "true") {
+    btn.disabled = false;
+    btn.style.opacity = 1;
+  } else {
+    btn.disabled = true;
+    btn.style.opacity = 0.5;
+    btn.onclick = () => alert("❌ Access denied. Go back to homepage and enter access code.");
+  }
+</script>
 </html>
