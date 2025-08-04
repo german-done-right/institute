@@ -165,6 +165,7 @@
         <!-- End Navbar Area -->
 
         <!-- Start Page Banner Area -->
+         
         <div class="page-banner-area text-center position-relative z-1">
             <div class="container">
                 <h1 class="mb-0 text-white text-uppercase" data-cue="slideInUp">
@@ -175,6 +176,7 @@
         <!-- End Page Banner Area -->
 
         <!-- Start Login Area -->
+        
         <div class="login-area bg-fbfbfb ptb-120">
             <div class="container">
                 <div class="row align-items-center" data-cues="slideInUp" data-group="loginContent">
@@ -202,7 +204,7 @@
                             </h3>
                             <form>
                                 <div class="form-group">
-                                    <input type="text" class="form-control shadow-none" placeholder="Email">
+                                    <input type="text" id = "verifyEmail" class="form-control shadow-none" placeholder="Email">
                                 </div>
                                 <div class="form-group position-relative">
                                     <input type="password" id="passwordInput" class="form-control shadow-none" placeholder="Password">
@@ -213,7 +215,7 @@
                                 <a href="login.html#" class="forgot-password">
                                     Forgot your Password?
                                 </a>
-                                <button type="submit" class="default-btn d-block w-100" onclick="saveAccess()">
+                                <button type="submit" class="default-btn d-block w-100" onclick="handleLogin(event)">
                                     Log in
                                 </button>
                                 <p class="text-center">
@@ -236,12 +238,22 @@
                                         <i class="fa-brands fa-windows"></i>
                                     </button>
                                 </div>
+                                <div id="pageBlocker" onclick="showBlockedMessage()" style="
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255, 255, 255, 0); /* transparent */
+  z-index: 9999;
+  display: none; /* hidden by default */
+"></div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
+            
         </div>
+            
+        
         
         <!-- End Login Area -->
 
@@ -455,15 +467,42 @@
         <script src="assets/js/scrollCue.min.js"></script>
         <script src="assets/js/custom.js"></script>
     </body>
+    
+
     <script>
-  function saveAccess() {
-    const code = document.getElementById("passwordInput").value.trim();
-    if (code === "Letmein777") {
-      localStorage.setItem("hasAccess", "true");
-      alert("✅ Access granted!");
-    } else {
-      alert("❌ Invalid code");
-    }
+    // Predefined valid email-password pairs
+    const validUsers = {
+      "user1@example.com": "password123",
+      "admin@domain.com": "adminpass",
+      "test@sample.com": "test1234"
+    };
+
+    function handleLogin(event) {
+  event.preventDefault();
+
+  const email = document.getElementById("verifyEmail").value.trim();
+  const password = document.getElementById("passwordInput").value;
+
+  if (validUsers[email] && validUsers[email] === password) {
+    localStorage.setItem("hasAccess", "true");
+    alert("✅ Access granted!");
+
+    // Optionally redirect to another page
+    // window.location.href = "premium.html";
+  } else {
+    localStorage.setItem("hasAccess", "false");
+    alert("❌ Invalid email or password.");
   }
-</script>
+}
+
+       window.onload = () => {
+  if (localStorage.getItem("hasAccess") === "true") {
+    document.getElementById("pageBlocker").style.display = "block";
+  }
+};
+
+            function showBlockedMessage() {
+    alert("🔒You’re already logged in.");
+  }
+  </script>
 </html>

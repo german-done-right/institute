@@ -245,6 +245,13 @@
                                         <i class="fa-brands fa-windows"></i>
                                     </button>
                                 </div>
+                                <div id="pageBlocker" style="
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255, 255, 255, 0); /* transparent */
+  z-index: 9999;
+  display: none; /* hidden by default */
+"></div>
                             </form>
                         </div>
                     </div>
@@ -462,4 +469,12 @@
         <script src="assets/js/scrollCue.min.js"></script>
         <script src="assets/js/custom.js"></script>
     </body>
+    <script>
+  window.onload = () => {
+    if (localStorage.getItem("hasAccess") === "true") {
+      document.getElementById("pageBlocker").style.display = "block";
+    }
+  };
+</script>
+
 </html>

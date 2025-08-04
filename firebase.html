@@ -39,3 +39,51 @@
     window.location.href = "index.html"; // 👈 Change this if your homepage is named differently
   }
 </script>
+
+
+
+
+
+
+<script>
+    // Store valid email-password pairs
+    const users = {
+      "user1@example.com": "password123",
+      "admin@domain.com": "adminpass",
+      "test@sample.com": "test1234"
+    };
+
+    function login(event) {
+      event.preventDefault(); // prevent form reload
+
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+
+      const messageEl = document.getElementById("message");
+
+      if (users[email] && users[email] === password) {
+        messageEl.textContent = "✅ Login successful!";
+        messageEl.style.color = "green";
+      } else {
+        messageEl.textContent = "❌ Invalid email or password.";
+        messageEl.style.color = "red";
+      }
+    }
+  </script>
+
+
+<button id="premiumBtn">Access Premium</button>
+
+<script>
+  const btn = document.getElementById("premiumBtn");
+
+  if (localStorage.getItem("hasAccess") === "true") {
+    btn.disabled = false;
+    btn.style.opacity = 1;
+    btn.onclick = () => alert("✅ Welcome to the premium section!");
+  } else {
+    btn.disabled = true;
+    btn.style.opacity = 0.5;
+    btn.onclick = () => alert("❌ Access denied. Go back to homepage and enter login credentials.");
+  }
+</script>
