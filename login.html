@@ -488,13 +488,13 @@
     alert("✅ Access granted!");
 
     // Optionally redirect to another page
-    // window.location.href = "premium.html";
+    window.location.href = "index.html";
   } else {
     localStorage.setItem("hasAccess", "false");
     alert("❌ Invalid email or password.");
   }
 }
-        window.location.href = "index.html";
+        
 
        window.onload = () => {
   if (localStorage.getItem("hasAccess") === "true") {
