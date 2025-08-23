@@ -50,10 +50,10 @@ Default CSS
 :root {
   --fontFamily: "Poppins", sans-serif;
   --headingFontFamily: "Unbounded", sans-serif;
-  --primaryColor: #A7FF37;
-  --secondaryColor: #586CEC;
+  --primaryColor: #ffbe0b;
+  --secondaryColor: #f14a41;
   --paragraphColor: #555555;
-  --whiteColor: #ffffff;
+  --whiteColor: #FFFEF7;
   --blackColor: #000000;
   --transition: .5s;
   --fontSize: 20px;

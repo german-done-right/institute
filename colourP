@@ -1,0 +1,8 @@
+/* CSS Variables */
+:root {
+  --color-1: #0d0d0d;
+  --color-2: #1a1a1a;
+  --color-3: #c5332b;
+  --color-4: #f0a800;
+  --color-5: #ffd54d;
+}
