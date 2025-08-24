@@ -874,11 +874,62 @@
                         Your email address will not be published. Required field are marked*
                     </p>
                 </div>
-                <div class="contact-form text-center mx-auto">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6">
-                            <div class="form-group">
-                                <input type="text" placeholder="Full name *" class="form-control">
+                <form action="https://formspree.io/f/xzzaprno" method="POST">
+                    <div class="contact-form text-center mx-auto">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="name" placeholder="Full name *" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="email" placeholder="Email address *" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12">
+                                <div class="form-group mb-0">
+                                    <textarea class="form-control" name="message" placeholder="Write your message *"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="default-btn" type="submit">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </form>
+        <!-- End Contact Area -->
+
+        <!-- Start Blog Area -->
+        <div class="blog-area pt-120 pb-95">
+            <div class="container">
+                <div class="section-title position-relative">
+                    <h2 class="mb-0 fw-semibold text-uppercase">
+                        Recent blog & news
+                    </h2>
+                    <a href="blog.html" class="default-btn">
+                        Explore All Blog
+                    </a>
+                </div>
+                <div class="row justify-content-center" data-cues="slideInUp" data-group="blogContent">
+                    <div class="col-xl-4 col-md-6">
+                        <div class="single-blog-post mb-25">
+                            <a href="blog-details.html" class="image d-block">
+                                <img src="assets/images/blogs/blog1.jpg" alt="blog-image">
+                            </a>
+                            <div class="content">
+                                <div class="info position-relative">
+                                    <ul class="d-flex align-items-center p-0 mb-0 list-unstyled">
+                                        <li class="d-inline-block position-relative">
+                                            25 <br>Jun
+                                        </li>
+                                        <li class="d-inline-block position-relative">
+                                            <i class="fa-regular fa-circle-user"></i> By
+                                            <a href="blog.html">
+                                                Admin
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
